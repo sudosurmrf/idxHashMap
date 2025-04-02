@@ -57,3 +57,15 @@ console.log(map.len());               // 1
 console.log(map.length)               // 1
 
 ```
+
+## Other Usage: 
+
+IdxHashMap also allows for 2 arguments to be passed, the key mapped to a node, as well as the index mapped to a node. 
+
+If data storage and loading is a factor, you can restore for serialzation by passing the map keys and map indicies. 
+
+for more performance optimzation, you can use the first argument to map custom keys from an object, while the second argument would be the pre-allocated array. 
+
+There are probably even more uses for this that I am not aware of yet, but will maybe update the readme with more info. 
+
+Message me for any questions!

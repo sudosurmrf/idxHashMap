@@ -1,7 +1,7 @@
 class IdxHashMap {
-  constructor() {
-    this.keyToNode = Object.create(null);
-    this.indexToNode = [];
+  constructor(keyToNode, indexToNode) {
+    this.keyToNode = keyToNode ?? Object.create(null);
+    this.indexToNode = indexToNode ?? [];
   }
 
   set(key, value) {
