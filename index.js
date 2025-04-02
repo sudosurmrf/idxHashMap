@@ -14,11 +14,11 @@ class IdxHashMap {
     this.indexToNode.push(node);
   }
 
-  get(key) {
+  get(key) { 
     return this.keyToNode[key]?.value;
   }
 
-  idx(index) {
+  idx(index) { 
     return this.indexToNode[index]?.value;
   }
 
@@ -39,6 +39,45 @@ class IdxHashMap {
   }
 
   len() {
+    return this.indexToNode.length;
+  }
+
+  includes(key) {
+    return key in this.keyToNode;
+  }
+
+  indexOfKey(key) {
+    const node = this.keyToNode[key];
+    if (!node) return -1;
+    return this.indexToNode.indexOf(node);
+  }
+
+  forEach(callback) {
+    this.indexToNode.forEach((node, idx) => callback(node.value, idx));
+  }
+
+  map(callback) {
+    return this.indexToNode.map((node, idx) => callback(node.value, idx));
+  }
+
+  filter(callback) {
+    const result = new IdxHashMap();
+    this.indexToNode.forEach((node, idx) => {
+      if (callback(node.value, idx)) {
+        result.set(node.key, node.value);
+      }
+    });
+    return result;
+  }
+
+  *[Symbol.iterator]() {
+    for (let idx = 0; idx < this.indexToNode.length; idx++) {
+      const node = this.indexToNode[idx];
+      yield { value: node.value, key: node.key, idx };
+    }
+  }
+
+  get length() {
     return this.indexToNode.length;
   }
 }
