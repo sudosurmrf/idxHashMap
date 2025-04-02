@@ -1,6 +1,7 @@
 # IdxHashMap
 
-A JavaScript data structure providing **O(1)** insertion, deletion, numeric indexing, and key-based lookup at the cost of space complexity.
+A JavaScript data structure providing **O(1)** insertion, deletion, numeric indexing, and key-based lookup at the cost of space.
+utilizes the pop and swap method for deletion, be careful if strict indexed order matters
 
 ## Installation
 
