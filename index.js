@@ -80,6 +80,19 @@ class IdxHashMap {
   get length() {
     return this.indexToNode.length;
   }
+
+  find(arg) {
+    if (typeof arg === 'string' || typeof arg === 'number') {
+      if (arg in this.keyToNode) return this.keyToNode[arg].value;
+    }
+    if (typeof arg === 'function') {
+      for (let idx = 0; idx < this.indexToNode.length; idx++) {
+        const node = this.indexToNode[idx];
+        if (arg(node.value, idx, node.key)) return node.value;
+      }
+    }
+    return undefined;
+  }
 }
 
 module.exports = IdxHashMap;
