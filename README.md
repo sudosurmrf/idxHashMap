@@ -18,9 +18,9 @@ map.set("name", "Ari");
 map.set("color", "purple");
 
 console.log(map.get("name"));      // Ari
-console.log(map.getByIndex(1));     // pruple
+console.log(map.idx(1));     // pruple
 
-map.delete("name");
+map.del("name");
 
-console.log(map.size());            // 1
+console.log(map.len());            // 1
 ```

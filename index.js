@@ -18,11 +18,11 @@ class IdxHashMap {
     return this.keyToNode[key]?.value;
   }
 
-  getByIndex(index) {
+  idx(index) {
     return this.indexToNode[index]?.value;
   }
 
-  delete(key) {
+  del(key) {
     const node = this.keyToNode[key];
     if (!node) return false;
 
@@ -38,7 +38,7 @@ class IdxHashMap {
     return true;
   }
 
-  size() {
+  len() {
     return this.indexToNode.length;
   }
 }
