@@ -46,6 +46,7 @@ console.log(upperCaseValues); // ["ARI", "PURPLE"]
 const filteredMap = map.filter((val) => val !== "Ari");
 filteredMap.forEach((val, idx) => console.log(idx, val)); // 0 purple
 
+//since the key is an object, it allows for any combination of the three properties (key, value, idx) to be given in an object as an argument and returned. 
 for (const {value, key, idx} of map) {
   console.log(idx, key, value);          //(0, name, Ari), (1, color, purple)
 }
